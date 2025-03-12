@@ -49,6 +49,7 @@ Here are some of the most common setups to help you get up and running.
 - [React](#react)
 - [Vue](#vue)
 - [Angular](#angular)
+- [Wordpress](#wordpress)
 
 <br>
 
@@ -171,6 +172,27 @@ export class AppComponent implements AfterViewInit{
         });
     }
 }
+```
+
+### Wordpress
+
+Add the following changes to your themes' `function.php` and the configuration file to `js/obcookieconsent.js`:
+
+```php
+add_action( 'wp_head', 'ob_cookie_consent_h' );
+if ( ! function_exists( 'ob_cookie_consent_h' ) ):
+function ob_cookie_consent_h() { //Cookie consent for Google Tags - Analytics, Ads
+wp_enqueue_style( 'ob-cookie', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css', array(), null);
+}
+endif; 
+
+add_action( 'wp_body_open', 'ob_cookie_consent_b' );
+if ( ! function_exists( 'ob_cookie_consent_b' ) ):
+function ob_cookie_consent_b() { //Cookie consent for Analytics
+wp_enqueue_script('ob-cookie', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js', array(), null);
+wp_enqueue_script('ob-cookieset', get_template_directory_uri() . '/js/obcookieconsent.js', array(), null);
+}
+endif; 
 ```
 
 Finally, [configure](#configuration) the plugin.
