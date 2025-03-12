@@ -22,13 +22,13 @@ const CAT_ADVERTISEMENT = "advertisement";
 const CAT_FUNCTIONALITY = "functionality";
 const CAT_SECURITY = "security";
 
-const SERVICE_AD_STORAGE = 'ad_storage'
-const SERVICE_AD_USER_DATA = 'ad_user_data'
-const SERVICE_AD_PERSONALIZATION = 'ad_personalization'
-const SERVICE_ANALYTICS_STORAGE = 'analytics_storage'
-const SERVICE_FUNCTIONALITY_STORAGE = 'functionality_storage'
-const SERVICE_PERSONALIZATION_STORAGE = 'personalization_storage'
-const SERVICE_SECURITY_STORAGE = 'security_storage'
+const SERVICE_AD_STORAGE = 'ad_storage';
+const SERVICE_AD_USER_DATA = 'ad_user_data';
+const SERVICE_AD_PERSONALIZATION = 'ad_personalization';
+const SERVICE_ANALYTICS_STORAGE = 'analytics_storage';
+const SERVICE_FUNCTIONALITY_STORAGE = 'functionality_storage';
+const SERVICE_PERSONALIZATION_STORAGE = 'personalization_storage';
+const SERVICE_SECURITY_STORAGE = 'security_storage';
 
 // Define dataLayer and the gtag function.
 window.dataLayer = window.dataLayer || [];
